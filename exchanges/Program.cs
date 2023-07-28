@@ -29,6 +29,15 @@ urls.Add("exchanges.Exchanges.bitso", "https://sandbox.bitso.com/api/v3/ticker/"
 urls.Add("exchanges.Exchanges.bitvavo", "https://api.bitvavo.com/v2/ticker/24h");
 //urls.Add("exchanges.Exchanges.bitforex", "https://api.bitforex.com/api/v1/market/symbols"); // !здесь нет api по всем сразу валютам, сначала выбираются названия валют из <- ссылки, в конвертере по каждой валюте идёт отдельный запрос по данным
 urls.Add("exchanges.Exchanges.pionex", "https://api.pionex.com/api/v1/market/tickers");
+urls.Add("exchanges.Exchanges.coinstore", "https://api.coinstore.com/api/v1/market/tickers");
+urls.Add("exchanges.Exchanges.indoex", "https://api.indoex.io/getMarketDetails/");
+urls.Add("exchanges.Exchanges.tidex", "https://api.tidex.com/api/v1/public/tickers");
+urls.Add("exchanges.Exchanges.azbit", "https://data.azbit.com/api/tickers"); // не уверен насчёт последней цены, взял price
+urls.Add("exchanges.Exchanges.xtcom", "https://sapi.xt.com/v4/public/ticker"); // не нашёл описания данных, взял так: последняя цена - l, цена покупки - ap, цена продажи - bp
+urls.Add("exchanges.Exchanges.latoken", "https://api.latoken.com/v2/ticker");
+urls.Add("exchanges.Exchanges.biconomy", "https://www.biconomy.com/api/v1/tickers");
+urls.Add("exchanges.Exchanges.cointr", "https://api.cointr.pro/v1/spot/market/tickers");
+urls.Add("exchanges.Exchanges.consbit", "https://coinsbit.io/api/v1/public/tickers");
 
 
 //urls.Add("exchanges.Exchanges.cracken", "https://api.kraken.com/0/public/OHLC?pair=XBTUSD"); // нет списка валют по api
@@ -38,25 +47,13 @@ urls.Add("exchanges.Exchanges.pionex", "https://api.pionex.com/api/v1/market/tic
 //#"bitrue": UnifyParser(url="https://www.bitrue.com/api/v1/ticker/allPrices", exchange="bitrue"); // не работает
 //urls.Add("btcturk","https://api.btcturk.com/api/v2/ticker/currency?symbol=BTCUSDT"); откуда брать названия валют?
 //urls.Add("deepcoin","https://api.deepcoin.com/deepcoin/market/tickers") // не работает;
-
+//urls.Add("coinex","https://api.coinex.com/v1");  // не работает, нужна авторизация?
 //#"phemex": UnifyParser(url="https://api.phemex.com/md/v1/ticker/24hr?symbol=<symbol>", exchange="phemex");
 //#"currency": UnifyParser(url="https://marketcap.backend.currency.com/api/v1/token_crypto/", exchange="currency"); // не работает
-
-
-//urls.Add("coinstore","https://api.coinstore.com/api/v1/market/tickers");
-//urls.Add("pexpay","https://api.pexpay.com/sapi/v1/c2c/ad/getReferencePrice");
-//urls.Add("coinex","https://api.coinex.com/v1");
-//urls.Add("indoex","https://api.indoex.io/getMarketDetails/");
-//urls.Add("tidex","https://api.tidex.com/api/v1/public/tickers");
-////#"azbit": UnifyParser(url="https://data.azbit.com/api/tickers", exchange="azbit");
-//urls.Add("woo","https://api.woo.org/");
-//urls.Add("xtcom","https://sapi.xt.com/v4/public/ticker");
-//urls.Add("latoken"," https://api.latoken.com/v2/ticker");
-//urls.Add("biconomy","https://www.biconomy.com/api/v1/tickers");
-//urls.Add("cointr","https://api.cointr.pro/v1/spot/market/tickers");
-//urls.Add("cryptology","https://sandbox.cryptology.com/v1/private/get-trades");
-//urls.Add("consbit","https://coinsbit.io/api/v1/public/tickers");
-//urls.Add("garantex","https://garantex.io/api/v2/trades?market={BTCUSDT}");
+//urls.Add("pexpay","https://api.pexpay.com/sapi/v1/c2c/ad/getReferencePrice");  // не работает
+//urls.Add("woo","https://api.woo.org/"); нужна авторизация
+//urls.Add("cryptology","https://sandbox.cryptology.com/v1/private/get-trades");   // не работает, нужна авторизация?
+//urls.Add("garantex","https://garantex.io/api/v2/trades?market={BTCUSDT}"); // возвращает ~250 данных на одну валюту, какие надо брать?
 
 var results = new exchangeResult();
 var exportService = new ExportService();
@@ -80,7 +77,3 @@ foreach (var url in urls)
 
 exportService.GenerateJson(results);
 exportService.GenerateExcel(results);
-
-Console.WriteLine("Press any key");
-Console.ReadKey();
-
