@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using exchanges.Extensions;
+using Newtonsoft.Json;
 
 namespace exchanges.Exchanges
 {
@@ -21,9 +22,9 @@ namespace exchanges.Exchanges
                                 name = "poloniex",
                                 exchangeData=new exchangeData
                                 {
-                                    lastPrice=dto.close,
-                                    askPrice = dto.ask,
-                                    bidPrice = dto.bid
+                                    lastPrice=dto.close.PowerConverter(),
+                                    askPrice = dto.ask.PowerConverter(),
+                                    bidPrice = dto.bid.PowerConverter()
                                 }
                             }
                         }
@@ -40,9 +41,9 @@ namespace exchanges.Exchanges
                         name = "poloniex",
                         exchangeData = new exchangeData
                         {
-                            lastPrice = dto.close,
-                            askPrice = dto.ask,
-                            bidPrice = dto.bid
+                            lastPrice = dto.close.PowerConverter(),
+                            askPrice = dto.ask.PowerConverter(),
+                            bidPrice = dto.bid.PowerConverter()
                         }
                     });
                 }

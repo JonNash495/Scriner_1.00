@@ -18,11 +18,11 @@ namespace exchanges.Exchanges
                         {
                             new exchange
                             {
-                                name = dtos.GetType().Name,
+                                name = "lbank",
                                 exchangeData=new exchangeData
                                 {
                                     lastPrice=dto.ticker.latest??string.Empty,
-                                    askPrice = dto.ticker.low.HasValue?dto.ticker.low.Value:0,
+                                    askPrice = dto.ticker.low??string.Empty,
                                     bidPrice = dto.ticker.high??string.Empty
                                 }
                             }
@@ -37,11 +37,11 @@ namespace exchanges.Exchanges
 
                     currency.exchanges.Add(new exchange
                     {
-                        name = dtos.GetType().Name,
+                        name = "lbank",
                         exchangeData = new exchangeData
                         {
                             lastPrice = dto.ticker.latest ?? string.Empty,
-                            askPrice = dto.ticker.low.HasValue ? dto.ticker.low.Value : 0,
+                            askPrice = dto.ticker.low ?? string.Empty,
                             bidPrice = dto.ticker.high ?? string.Empty
                         }
                     });

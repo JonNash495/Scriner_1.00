@@ -12,7 +12,7 @@ namespace exchanges.Exchanges
         public string lastPrice { get; set; }
         public string bidPrice { get; set; }
         public string bidQty { get; set; }
-        public decimal askPrice { get; set; }
+        public string askPrice { get; set; }
         public string askQty { get; set; }
         public string openPrice { get; set; }
         public string highPrice { get; set; }

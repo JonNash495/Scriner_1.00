@@ -15,7 +15,7 @@ namespace exchanges.Exchanges
         public string instId { get; set; }
         public string last { get; set; }
         public string lastSz { get; set; }
-        public decimal askPx { get; set; }
+        public string askPx { get; set; }
         public string askSz { get; set; }
         public string bidPx { get; set; }
         public string bidSz { get; set; }

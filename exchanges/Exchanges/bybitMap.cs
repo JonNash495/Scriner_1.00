@@ -19,12 +19,12 @@ namespace exchanges.Exchanges
                         {
                             new exchange
                             {
-                                name = dtos.GetType().Name,
+                                name = "bybit",
                                 exchangeData=new exchangeData
                                 {
-                                    lastPrice=dto.last_price,                                    
-                                    askPrice = dto.ask_price,
-                                    bidPrice = dto.bid_price
+                                    lastPrice=dto.last_price.PowerConverter(),                                    
+                                    askPrice = dto.ask_price.PowerConverter(),
+                                    bidPrice = dto.bid_price.PowerConverter()
                                 }
                             }
                         }
@@ -38,12 +38,12 @@ namespace exchanges.Exchanges
 
                     currency.exchanges.Add(new exchange
                     {
-                        name = dtos.GetType().Name,
+                        name = "bybit",
                         exchangeData = new exchangeData
                         {
-                            lastPrice = dto.last_price,
-                            askPrice = dto.ask_price,
-                            bidPrice = dto.bid_price
+                            lastPrice = dto.last_price.PowerConverter(),
+                            askPrice = dto.ask_price.PowerConverter(),
+                            bidPrice = dto.bid_price.PowerConverter()
                         }
                     });
                 }

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using exchanges.Extensions;
+using Newtonsoft.Json.Linq;
 
 namespace exchanges.Exchanges
 {
@@ -25,9 +26,9 @@ namespace exchanges.Exchanges
                                 name = "coinsbit",
                                 exchangeData=new exchangeData
                                 {
-                                    lastPrice=dto.last.ToString(),
-                                    askPrice = dto.ask,
-                                    bidPrice = dto.bid.ToString()
+                                    lastPrice = dto.last.ToString().PowerConverter(),
+                                    askPrice = dto.ask.PowerConverter(),
+                                    bidPrice = dto.bid.ToString().PowerConverter()
                                 }
                             }
                         }
@@ -44,9 +45,9 @@ namespace exchanges.Exchanges
                         name = "coinsbit",
                         exchangeData = new exchangeData
                         {
-                            lastPrice = dto.last.ToString(),
-                            askPrice = dto.ask,
-                            bidPrice = dto.bid.ToString()
+                            lastPrice = dto.last.ToString().PowerConverter(),
+                            askPrice = dto.ask.PowerConverter(),
+                            bidPrice = dto.bid.ToString().PowerConverter()
                         }
                     });
                 }

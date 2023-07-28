@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using exchanges.Extensions;
+using Newtonsoft.Json;
 
 namespace exchanges.Exchanges
 {
@@ -18,12 +19,12 @@ namespace exchanges.Exchanges
                         {
                             new exchange
                             {
-                                name = dtos.GetType().Name,
+                                name = "bitget",
                                 exchangeData=new exchangeData
                                 {
-                                    lastPrice=dto.close,
-                                    askPrice = dto.sellOne,
-                                    bidPrice = dto.buyOne
+                                    lastPrice=dto.close.PowerConverter(),
+                                    askPrice = dto.sellOne.PowerConverter(),
+                                    bidPrice = dto.buyOne.PowerConverter()
                                 }
                             }
                         }
@@ -37,12 +38,12 @@ namespace exchanges.Exchanges
 
                     currency.exchanges.Add(new exchange
                     {
-                        name = dtos.GetType().Name,
+                        name = "bitget",
                         exchangeData = new exchangeData
                         {
-                            lastPrice = dto.close,
-                            askPrice = dto.sellOne,
-                            bidPrice = dto.buyOne
+                            lastPrice = dto.close.PowerConverter(),
+                            askPrice = dto.sellOne.PowerConverter(),
+                            bidPrice = dto.buyOne.PowerConverter()
                         }
                     });
                 }

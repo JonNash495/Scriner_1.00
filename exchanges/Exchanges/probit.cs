@@ -10,7 +10,7 @@ namespace exchanges.Exchanges
     public class probitDatum
     {
         public string last { get; set; }
-        public decimal? low { get; set; }
+        public string low { get; set; }
         public string high { get; set; }
         public string change { get; set; }
         public string base_volume { get; set; }

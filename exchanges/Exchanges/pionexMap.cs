@@ -3,12 +3,12 @@ using Newtonsoft.Json;
 
 namespace exchanges.Exchanges
 {
-    public class mexcMap
+    public class pionexMap
     {
         public void Convert(exchangeResult result, string json)
         {
-            List<mexc> dtos = JsonConvert.DeserializeObject<List<mexc>>(json);
-            foreach (var dto in dtos)
+            var dtos = JsonConvert.DeserializeObject<pionex>(json);
+            foreach (var dto in dtos.data.tickers)
             {
                 if (!result.currencies.Any(x => x.pairName == dto.symbolName))
                 {
@@ -19,12 +19,12 @@ namespace exchanges.Exchanges
                         {
                             new exchange
                             {
-                                name = "mexc",
+                                name = "pionex",
                                 exchangeData=new exchangeData
                                 {
-                                    lastPrice=dto.lastPrice.PowerConverter(),
-                                    askPrice = dto.askPrice.PowerConverter(),
-                                    bidPrice = dto.bidPrice.PowerConverter()
+                                    lastPrice=dto.close!=null?dto.close.ToString().PowerConverter():string.Empty,
+                                    askPrice = dto.low!=null?dto.low.ToString().PowerConverter():string.Empty,
+                                    bidPrice = dto.high!=null?dto.high.ToString().PowerConverter():string.Empty,
                                 }
                             }
                         }
@@ -38,12 +38,12 @@ namespace exchanges.Exchanges
 
                     currency.exchanges.Add(new exchange
                     {
-                        name = "mexc",
+                        name = "pionex",
                         exchangeData = new exchangeData
                         {
-                            lastPrice = dto.lastPrice.PowerConverter(),
-                            askPrice = dto.askPrice.PowerConverter(),
-                            bidPrice = dto.bidPrice.PowerConverter()
+                            lastPrice = dto.close != null ? dto.close.ToString().PowerConverter() : string.Empty,
+                            askPrice = dto.low != null ? dto.low.ToString().PowerConverter() : string.Empty,
+                            bidPrice = dto.high != null ? dto.high.ToString().PowerConverter() : string.Empty
                         }
                     });
                 }

@@ -23,7 +23,7 @@ namespace exchanges.Exchanges
         public string low24h { get; set; }
         public string openUtc0 { get; set; }
         public string quoteVol { get; set; }
-        public decimal sellOne { get; set; }
+        public string sellOne { get; set; }
         public string symbol { get; set; }
         public string symbolName { get { return this.symbol.RemoveSpecialCharacters(); } set { } }
         public string ts { get; set; }

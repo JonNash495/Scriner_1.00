@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using exchanges.Extensions;
+using Newtonsoft.Json;
 
 namespace exchanges.Exchanges
 {
@@ -18,11 +19,11 @@ namespace exchanges.Exchanges
                         {
                             new exchange
                             {
-                                name = binance.GetType().Name,
+                                name = "binance",
                                 exchangeData=new exchangeData
                                 {
                                     lastPrice="-",                                    
-                                    askPrice = binance.askPrice,
+                                    askPrice = binance.askPrice.PowerConverter(),
                                     bidPrice = binance.bidPrice
                                 }
                             }
@@ -37,11 +38,11 @@ namespace exchanges.Exchanges
 
                     currency.exchanges.Add(new exchange
                     {
-                        name = binance.GetType().Name,
+                        name = "binance",
                         exchangeData = new exchangeData
                         {
-                            lastPrice = "-",
-                            askPrice = binance.askPrice,
+                            lastPrice = string.Empty,
+                            askPrice = binance.askPrice.PowerConverter(),
                             bidPrice = binance.bidPrice
                         }
                     });

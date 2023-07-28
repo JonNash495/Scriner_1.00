@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using exchanges.Extensions;
+using Newtonsoft.Json;
 
 namespace exchanges.Exchanges
 {
@@ -21,9 +22,9 @@ namespace exchanges.Exchanges
                                 name = "okcoin",
                                 exchangeData=new exchangeData
                                 {
-                                    lastPrice=dto.last,
-                                    askPrice = dto.askPx,
-                                    bidPrice = dto.bidPx
+                                    lastPrice=dto.last.PowerConverter(),
+                                    askPrice = dto.askPx.PowerConverter(),
+                                    bidPrice = dto.bidPx.PowerConverter()
                                 }
                             }
                         }
@@ -40,9 +41,9 @@ namespace exchanges.Exchanges
                         name = "okcoin",
                         exchangeData = new exchangeData
                         {
-                            lastPrice = dto.last,
-                            askPrice = dto.askPx,
-                            bidPrice = dto.bidPx
+                            lastPrice = dto.last.PowerConverter(),
+                            askPrice = dto.askPx.PowerConverter(),
+                            bidPrice = dto.bidPx.PowerConverter()
                         }
                     });
                 }

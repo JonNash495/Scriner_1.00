@@ -20,7 +20,15 @@ urls.Add("exchanges.Exchanges.probit", "https://api.probit.com/api/exchange/v1/t
 urls.Add("exchanges.Exchanges.bittrex", "https://api.bittrex.com/v3/markets/tickers");
 urls.Add("exchanges.Exchanges.okcoin", "https://www.okcoin.com/api/v5/market/tickers?instType=SPOT");
 urls.Add("exchanges.Exchanges.poloniex", "https://api.poloniex.com/markets/ticker24h");
-//urls.Add("exchanges.Exchanges.exmo", "https://api.exmo.com/v1.1/ticker");
+urls.Add("exchanges.Exchanges.exmo", "https://api.exmo.com/v1.1/ticker");
+urls.Add("exchanges.Exchanges.bigone", "https://big.one/api/v3/asset_pairs/tickers");
+urls.Add("exchanges.Exchanges.tapbit", "https://openapi.tapbit.com/spot/api/spot/instruments/ticker_list");
+urls.Add("exchanges.Exchanges.bitmex", "https://www.bitmex.com/api/v1/instrument/active");
+urls.Add("exchanges.Exchanges.bingx", "https://api-swap-rest.bingbon.pro/api/v1/market/getTicker");
+urls.Add("exchanges.Exchanges.bitso", "https://sandbox.bitso.com/api/v3/ticker/");
+urls.Add("exchanges.Exchanges.bitvavo", "https://api.bitvavo.com/v2/ticker/24h");
+//urls.Add("exchanges.Exchanges.bitforex", "https://api.bitforex.com/api/v1/market/symbols"); // !здесь нет api по всем сразу валютам, сначала выбираются названия валют из <- ссылки, в конвертере по каждой валюте идёт отдельный запрос по данным
+urls.Add("exchanges.Exchanges.pionex", "https://api.pionex.com/api/v1/market/tickers");
 
 
 //urls.Add("exchanges.Exchanges.cracken", "https://api.kraken.com/0/public/OHLC?pair=XBTUSD"); // нет списка валют по api
@@ -28,21 +36,13 @@ urls.Add("exchanges.Exchanges.poloniex", "https://api.poloniex.com/markets/ticke
 //#"crypto": UnifyParser(url="https://api.crypto.com/v1/ticker/price", exchange="crypto", headers={"accept": "application/json", "content-type": "application/json"}); // bad request
 //urls.Add("upbit","https://api.upbit.com/v1/ticker"); error 400
 //#"bitrue": UnifyParser(url="https://www.bitrue.com/api/v1/ticker/allPrices", exchange="bitrue"); // не работает
+//urls.Add("btcturk","https://api.btcturk.com/api/v2/ticker/currency?symbol=BTCUSDT"); откуда брать названия валют?
+//urls.Add("deepcoin","https://api.deepcoin.com/deepcoin/market/tickers") // не работает;
+
+//#"phemex": UnifyParser(url="https://api.phemex.com/md/v1/ticker/24hr?symbol=<symbol>", exchange="phemex");
+//#"currency": UnifyParser(url="https://marketcap.backend.currency.com/api/v1/token_crypto/", exchange="currency"); // не работает
 
 
-//urls.Add("exmo","https://api.exmo.com/v1.1/ticker");
-//urls.Add("bigone","https://big.one/api/v3/asset_pairs/tickers");
-//urls.Add("tapbit","https://openapi.tapbit.com/spot/api/spot/instruments/ticker_list");
-//urls.Add("bitmex","https://www.bitmex.com/api/v1/instrument/active");
-//urls.Add("bingx","https://api-swap-rest.bingbon.pro/api/v1/market/getTicker");
-////#"phemex": UnifyParser(url="https://api.phemex.com/md/v1/ticker/24hr?symbol=<symbol>", exchange="phemex");
-//urls.Add("bitso","https://sandbox.bitso.com/api/v3/ticker/");
-//urls.Add("bitvavo","https://api.bitvavo.com/v2/ticker/24h");
-//urls.Add("bitforex","https://api.bitforex.com/api/v1/market/symbols");
-//urls.Add("btcturk","https://api.btcturk.com/api/v2/ticker/currency?symbol=BTCUSDT");
-////#"currency": UnifyParser(url="https://marketcap.backend.currency.com/api/v1/token_crypto/", exchange="currency");
-//urls.Add("pionex","https://api.pionex.com/api/v1/market/tickers");
-//urls.Add("deepcoin","https://api.deepcoin.com/deepcoin/market/tickers");
 //urls.Add("coinstore","https://api.coinstore.com/api/v1/market/tickers");
 //urls.Add("pexpay","https://api.pexpay.com/sapi/v1/c2c/ad/getReferencePrice");
 //urls.Add("coinex","https://api.coinex.com/v1");

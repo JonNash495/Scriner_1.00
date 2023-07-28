@@ -19,12 +19,12 @@ namespace exchanges.Exchanges
                         {
                             new exchange
                             {
-                                name = dtos.GetType().Name,
+                                name = "kucoin",
                                 exchangeData=new exchangeData
                                 {
-                                    lastPrice=dto.last,
-                                    askPrice = dto.buy, 
-                                    bidPrice = dto.sell
+                                    lastPrice=dto.last.PowerConverter(),
+                                    askPrice = dto.buy.PowerConverter(), 
+                                    bidPrice = dto.sell.PowerConverter()
                                 }
                             }
                         }
@@ -38,12 +38,12 @@ namespace exchanges.Exchanges
 
                     currency.exchanges.Add(new exchange
                     {
-                        name = dtos.GetType().Name,
+                        name = "kucoin",
                         exchangeData = new exchangeData
                         {
-                            lastPrice = dto.last,
-                            askPrice = dto.buy,
-                            bidPrice = dto.sell
+                            lastPrice = dto.last.PowerConverter(),
+                            askPrice = dto.buy.PowerConverter(),
+                            bidPrice = dto.sell.PowerConverter()
                         }
                     });
                 }

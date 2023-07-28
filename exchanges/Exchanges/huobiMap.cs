@@ -19,11 +19,11 @@ namespace exchanges.Exchanges
                         {
                             new exchange
                             {
-                                name = dtos.GetType().Name,
+                                name =  "huobi",
                                 exchangeData=new exchangeData
                                 {
                                     lastPrice=dto.close.ToString().PowerConverter(),
-                                    askPrice = dto.ask,
+                                    askPrice = dto.ask.ToString().PowerConverter(),
                                     bidPrice = dto.bid.ToString().PowerConverter()
                                 }
                             }
@@ -38,11 +38,11 @@ namespace exchanges.Exchanges
 
                     currency.exchanges.Add(new exchange
                     {
-                        name = dtos.GetType().Name,
+                        name = "huobi",
                         exchangeData = new exchangeData
                         {
                             lastPrice = dto.close.ToString().PowerConverter(),
-                            askPrice = dto.ask,
+                            askPrice = dto.ask.ToString().PowerConverter(),
                             bidPrice = dto.bid.ToString().PowerConverter()
                         }
                     });

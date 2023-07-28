@@ -1,14 +1,19 @@
 ﻿using exchanges.Extensions;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace exchanges.Exchanges
 {
-    public class mexcMap
+    public class tapbitMap
     {
         public void Convert(exchangeResult result, string json)
         {
-            List<mexc> dtos = JsonConvert.DeserializeObject<List<mexc>>(json);
-            foreach (var dto in dtos)
+            tapbit dtos = JsonConvert.DeserializeObject<tapbit>(json);
+            foreach (var dto in dtos.data)
             {
                 if (!result.currencies.Any(x => x.pairName == dto.symbolName))
                 {
@@ -19,12 +24,12 @@ namespace exchanges.Exchanges
                         {
                             new exchange
                             {
-                                name = "mexc",
+                                name = "tapbit",
                                 exchangeData=new exchangeData
                                 {
-                                    lastPrice=dto.lastPrice.PowerConverter(),
-                                    askPrice = dto.askPrice.PowerConverter(),
-                                    bidPrice = dto.bidPrice.PowerConverter()
+                                    lastPrice=dto.last_price.PowerConverter(),
+                                    askPrice = dto.lowest_ask.PowerConverter(),
+                                    bidPrice = dto.highest_bid.PowerConverter()
                                 }
                             }
                         }
@@ -38,12 +43,12 @@ namespace exchanges.Exchanges
 
                     currency.exchanges.Add(new exchange
                     {
-                        name = "mexc",
+                        name = "tapbit",
                         exchangeData = new exchangeData
                         {
-                            lastPrice = dto.lastPrice.PowerConverter(),
-                            askPrice = dto.askPrice.PowerConverter(),
-                            bidPrice = dto.bidPrice.PowerConverter()
+                            lastPrice = dto.last_price.PowerConverter(),
+                            askPrice = dto.lowest_ask.PowerConverter(),
+                            bidPrice = dto.highest_bid.PowerConverter()
                         }
                     });
                 }

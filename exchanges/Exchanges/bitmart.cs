@@ -26,7 +26,7 @@ namespace exchanges.Exchanges
         public string low_24h { get; set; }
         public string open_24h { get; set; }
         public string close_24h { get; set; }
-        public decimal best_ask { get; set; }
+        public string best_ask { get; set; }
         public string best_ask_size { get; set; }
         public string best_bid { get; set; }
         public string best_bid_size { get; set; }

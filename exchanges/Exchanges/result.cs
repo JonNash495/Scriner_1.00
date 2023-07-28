@@ -32,7 +32,7 @@
         /// <summary>
         /// цена покупки
         /// </summary>
-        public decimal? askPrice { get; set; }
+        public string askPrice { get; set; }
         /// <summary>
         /// цена продажи
         /// </summary>

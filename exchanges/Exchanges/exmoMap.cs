@@ -1,22 +1,21 @@
-﻿using exchanges.Extensions;
+﻿using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using exchanges.Extensions;
 using System.Globalization;
 
 namespace exchanges.Exchanges
 {
-    public class bitfinexMap
+    public class exmoMap
     {
         public void Convert(exchangeResult result, string json)
         {
-            var obj = JsonConvert.DeserializeObject(json); ;
-            JArray jsonArray = JArray.Parse(json);
-
-
-            foreach (var dto in jsonArray)
+            var obj = JsonConvert.DeserializeObject(json);            
+            var objects = JObject.Parse(json);
+           
+            foreach (var dto in objects)
             {
-                string symbolName = dto[0].ToString().RemoveSpecialCharacters().Substring(1); // валюты приходят вида i.e. tBTCUSD, tETHUSD https://docs.bitfinex.com/reference/rest-public-tickers
-                var d = dto[3].ToObject<double>();                                                                                             
+                string symbolName = dto.Key.ToString().RemoveSpecialCharacters().Substring(1); // валюты приходят вида i.e. tBTCUSD, tETHUSD https://docs.bitfinex.com/reference/rest-public-tickers
+                
                 if (!result.currencies.Any(x => x.pairName == symbolName))
                 {
                     var currency = new currency
@@ -26,12 +25,12 @@ namespace exchanges.Exchanges
                         {
                             new exchange
                             {
-                                name = "bitfinex",
+                                name = "exmo",
                                 exchangeData=new exchangeData
                                 {
-                                    lastPrice=dto[7].ToString().PowerConverter(),                                 
-                                    askPrice = dto[3].ToString().PowerConverter(),
-                                    bidPrice = dto[1].ToString().PowerConverter()
+                                    lastPrice=dto.Value["last_trade"].ToString().PowerConverter(),                                 
+                                    askPrice = dto.Value["buy_price"].ToString().PowerConverter(),
+                                    bidPrice = dto.Value["sell_price"].ToString().PowerConverter()
                                 }
                             }
                         }
@@ -45,12 +44,12 @@ namespace exchanges.Exchanges
 
                     currency.exchanges.Add(new exchange
                     {
-                        name = "bitfinex",
+                        name = "exmo",
                         exchangeData = new exchangeData
                         {
-                            lastPrice = dto[7].ToString().PowerConverter(),
-                            askPrice = dto[3].ToString().PowerConverter(),
-                            bidPrice = dto[1].ToString().PowerConverter()
+                            lastPrice = dto.Value["last_trade"].ToString().PowerConverter(),
+                            askPrice = dto.Value["buy_price"].ToString().PowerConverter(),
+                            bidPrice = dto.Value["sell_price"].ToString().PowerConverter()
                         }
                     });
                 }

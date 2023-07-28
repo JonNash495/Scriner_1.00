@@ -22,7 +22,7 @@ namespace exchanges.Exchanges
         public int count { get; set; }
         public double bid { get; set; }
         public double bidSize { get; set; }
-        public decimal ask { get; set; }
+        public string ask { get; set; }
         public double askSize { get; set; }
     }
 

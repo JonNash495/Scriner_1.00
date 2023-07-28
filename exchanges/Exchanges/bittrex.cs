@@ -8,7 +8,7 @@ namespace exchanges.Exchanges
         public string symbolName { get { return this.symbol.RemoveSpecialCharacters(); } set { } }
         public string lastTradeRate { get; set; }
         public string bidRate { get; set; }
-        public decimal askRate { get; set; }
+        public string askRate { get; set; }
         public DateTime updatedAt { get; set; }
     }
 }

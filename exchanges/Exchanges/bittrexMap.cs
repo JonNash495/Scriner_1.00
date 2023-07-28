@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using exchanges.Extensions;
+using Newtonsoft.Json;
 
 namespace exchanges.Exchanges
 {
@@ -21,9 +22,9 @@ namespace exchanges.Exchanges
                                 name = "bittrex",
                                 exchangeData=new exchangeData
                                 {
-                                    lastPrice=dto.lastTradeRate,
-                                    askPrice = dto.askRate,
-                                    bidPrice = dto.bidRate
+                                    lastPrice=dto.lastTradeRate.PowerConverter(),
+                                    askPrice = dto.askRate.PowerConverter(),
+                                    bidPrice = dto.bidRate.PowerConverter()
                                 }
                             }
                         }
@@ -40,9 +41,9 @@ namespace exchanges.Exchanges
                         name = "bittrex",
                         exchangeData = new exchangeData
                         {
-                            lastPrice = dto.lastTradeRate,
-                            askPrice = dto.askRate,
-                            bidPrice = dto.bidRate
+                            lastPrice = dto.lastTradeRate.PowerConverter(),
+                            askPrice = dto.askRate.PowerConverter(),
+                            bidPrice = dto.bidRate.PowerConverter()
                         }
                     });
                 }

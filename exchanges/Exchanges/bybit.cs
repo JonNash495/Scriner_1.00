@@ -17,7 +17,7 @@ namespace exchanges.Exchanges
         public string symbol { get; set; }
         public string symbolName { get { return this.symbol.RemoveSpecialCharacters(); } set { } }
         public string bid_price { get; set; }
-        public decimal ask_price { get; set; }
+        public string ask_price { get; set; }
         public string last_price { get; set; }
         public string last_tick_direction { get; set; }
         public string prev_price_24h { get; set; }

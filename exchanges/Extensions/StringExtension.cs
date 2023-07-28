@@ -21,7 +21,7 @@ namespace exchanges.Extensions
         public static string PowerConverter(this string str)
         {
             if (str == null) return string.Empty;
-            return str.Contains("E") ? decimal.Parse(str, NumberStyles.Float).ToString() : str;
+            return str.Contains("E") ? decimal.Parse(str.Replace(",","."), NumberStyles.Float, new CultureInfo("en-US")).ToString() : str;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace exchanges.Exchanges
     {
         public string high { get; set; }
         public string vol { get; set; }
-        public decimal? low { get; set; }
+        public string low { get; set; }
         public string change { get; set; }
         public string turnover { get; set; }
         public string latest { get; set; }

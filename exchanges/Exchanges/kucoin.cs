@@ -18,7 +18,7 @@ namespace exchanges.Exchanges
     {
         public string symbol { get; set; }
         public string symbolName { get { return this.symbol.RemoveSpecialCharacters(); } set { } }
-        public decimal buy { get; set; }
+        public string buy { get; set; }
         public string sell { get; set; }
         public string changeRate { get; set; }
         public string changePrice { get; set; }

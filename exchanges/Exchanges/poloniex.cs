@@ -19,7 +19,7 @@ namespace exchanges.Exchanges
         public string dailyChange { get; set; }
         public string bid { get; set; }
         public string bidQuantity { get; set; }
-        public decimal ask { get; set; }
+        public string ask { get; set; }
         public string askQuantity { get; set; }
         public object ts { get; set; }
         public string markPrice { get; set; }

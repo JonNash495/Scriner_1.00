@@ -18,11 +18,11 @@ namespace exchanges.Exchanges
                         {
                             new exchange
                             {
-                                name = dtos.GetType().Name,
+                                name = "bkex",
                                 exchangeData=new exchangeData
                                 {
                                     lastPrice=dto.price.ToString("0." + new string('#', 339)),
-                                    askPrice = 0,
+                                    askPrice = string.Empty,
                                     bidPrice = string.Empty
                                 }
                             }
@@ -37,11 +37,11 @@ namespace exchanges.Exchanges
 
                     currency.exchanges.Add(new exchange
                     {
-                        name = dtos.GetType().Name,
+                        name = "bkex",
                         exchangeData = new exchangeData
                         {
                             lastPrice = dto.price.ToString("0." + new string('#', 339)),
-                            askPrice = 0,
+                            askPrice = string.Empty,
                             bidPrice = string.Empty
                         }
                     });
