@@ -27,7 +27,7 @@ urls.Add("exchanges.Exchanges.bitmex", "https://www.bitmex.com/api/v1/instrument
 urls.Add("exchanges.Exchanges.bingx", "https://api-swap-rest.bingbon.pro/api/v1/market/getTicker");
 urls.Add("exchanges.Exchanges.bitso", "https://sandbox.bitso.com/api/v3/ticker/");
 urls.Add("exchanges.Exchanges.bitvavo", "https://api.bitvavo.com/v2/ticker/24h");
-//urls.Add("exchanges.Exchanges.bitforex", "https://api.bitforex.com/api/v1/market/symbols"); // !здесь нет api по всем сразу валютам, сначала выбираются названия валют из <- ссылки, в конвертере по каждой валюте идёт отдельный запрос по данным
+urls.Add("exchanges.Exchanges.bitforex", "https://api.bitforex.com/api/v1/market/symbols"); // !здесь нет api по всем сразу валютам, сначала выбираются названия валют из <- ссылки, в конвертере по каждой валюте идёт отдельный запрос по данным
 urls.Add("exchanges.Exchanges.pionex", "https://api.pionex.com/api/v1/market/tickers");
 urls.Add("exchanges.Exchanges.coinstore", "https://api.coinstore.com/api/v1/market/tickers");
 urls.Add("exchanges.Exchanges.indoex", "https://api.indoex.io/getMarketDetails/");

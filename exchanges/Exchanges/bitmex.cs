@@ -32,9 +32,9 @@ namespace exchanges.Exchanges
         public object publishInterval { get; set; }
         public object publishTime { get; set; }
         public object maxOrderQty { get; set; }
-        public double maxPrice { get; set; }
+        public double? maxPrice { get; set; }
         public string lotSize { get; set; }
-        public double tickSize { get; set; }
+        public double? tickSize { get; set; }
         public string multiplier { get; set; }
         public string settlCurrency { get; set; }
         public string? underlyingToPositionMultiplier { get; set; }
@@ -42,16 +42,16 @@ namespace exchanges.Exchanges
         public string? quoteToSettleMultiplier { get; set; }
         public bool isQuanto { get; set; }
         public bool isInverse { get; set; }
-        public double initMargin { get; set; }
-        public double maintMargin { get; set; }
+        public double? initMargin { get; set; }
+        public double? maintMargin { get; set; }
         public object riskLimit { get; set; }
         public object riskStep { get; set; }
         public object limit { get; set; }
         public bool capped { get; set; }
         public bool taxed { get; set; }
         public bool deleverage { get; set; }
-        public double makerFee { get; set; }
-        public double takerFee { get; set; }
+        public double? makerFee { get; set; }
+        public double? takerFee { get; set; }
         public string settlementFee { get; set; }
         public string insuranceFee { get; set; }
         public string fundingBaseSymbol { get; set; }
@@ -66,7 +66,7 @@ namespace exchanges.Exchanges
         public DateTime openingTimestamp { get; set; }
         public DateTime closingTimestamp { get; set; }
         public DateTime sessionInterval { get; set; }
-        public double prevClosePrice { get; set; }
+        public double? prevClosePrice { get; set; }
         public object limitDownPrice { get; set; }
         public object limitUpPrice { get; set; }
         public double? bankruptLimitDownPrice { get; set; }
@@ -79,19 +79,19 @@ namespace exchanges.Exchanges
         public object totalTurnover { get; set; }
         public object turnover { get; set; }
         public object turnover24h { get; set; }
-        public double homeNotional24h { get; set; }
-        public double foreignNotional24h { get; set; }
-        public double prevPrice24h { get; set; }
+        public double? homeNotional24h { get; set; }
+        public double? foreignNotional24h { get; set; }
+        public double? prevPrice24h { get; set; }
         public double? vwap { get; set; }
         public double? highPrice { get; set; }
         public double? lowPrice { get; set; }
-        public double lastPrice { get; set; }
-        public double lastPriceProtected { get; set; }
+        public double? lastPrice { get; set; }
+        public double? lastPriceProtected { get; set; }
         public string lastTickDirection { get; set; }
-        public double lastChangePcnt { get; set; }
-        public double bidPrice { get; set; }
-        public double midPrice { get; set; }
-        public double askPrice { get; set; }
+        public double? lastChangePcnt { get; set; }
+        public double? bidPrice { get; set; }
+        public double? midPrice { get; set; }
+        public double? askPrice { get; set; }
         public double? impactBidPrice { get; set; }
         public double? impactMidPrice { get; set; }
         public double? impactAskPrice { get; set; }
@@ -103,7 +103,7 @@ namespace exchanges.Exchanges
         public double? fairBasis { get; set; }
         public double? fairPrice { get; set; }
         public string markMethod { get; set; }
-        public double markPrice { get; set; }
+        public double? markPrice { get; set; }
         public string? indicativeTaxRate { get; set; }
         public double? indicativeSettlePrice { get; set; }
         public object optionUnderlyingPrice { get; set; }
